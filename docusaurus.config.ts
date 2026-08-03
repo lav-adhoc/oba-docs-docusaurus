@@ -20,6 +20,22 @@ const config: Config = {
 
   i18n: {defaultLocale: 'es', locales: ['es']},
 
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['es', 'en'],
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        docsRouteBasePath: '/manual',
+        searchContextByPaths: ['manual/19.0', 'manual/18.0'],
+        useAllContextsWithNoSearchContext: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
