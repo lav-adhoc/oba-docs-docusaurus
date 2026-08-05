@@ -29,8 +29,8 @@ const config: Config = {
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
-        docsRouteBasePath: '/manual',
-        searchContextByPaths: ['manual/19.0', 'manual/18.0'],
+        docsPluginIdForPreferredVersion: 'default',
+        searchContextByPaths: ['manual/19.0', 'manual/18.0', 'adhoc'],
         useAllContextsWithNoSearchContext: true,
       },
     ],
@@ -55,6 +55,18 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'adhoc',
+        path: 'adhoc',
+        routeBasePath: 'adhoc',
+        sidebarPath: './sidebars.ts',
+      },
+    ],
+  ],
+
   themeConfig: {
     navbar: {
       title: 'OBA Docs',
@@ -64,6 +76,13 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Manual',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          docsPluginId: 'adhoc',
+          position: 'left',
+          label: 'Adhoc',
         },
         {
           type: 'docsVersionDropdown',
