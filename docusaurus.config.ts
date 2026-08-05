@@ -45,8 +45,8 @@ const config: Config = {
           routeBasePath: 'manual',
           lastVersion: 'current',
           versions: {
-            current: {label: '19.0', path: '19.0'},
-            '18.0': {label: '18.0', path: '18.0'},
+            current: {label: '19.0', path: '19.0', banner: 'none'},
+            '18.0': {label: '18.0', path: '18.0', banner: 'none'},
           },
         },
         blog: false,
